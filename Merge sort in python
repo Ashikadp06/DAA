@@ -1,0 +1,52 @@
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        # Recursive call
+        merge_sort(left)
+        merge_sort(right)
+
+        i = j = k = 0
+
+        # Merge the two halves
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+
+        # Remaining elements
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+
+
+# Taking input
+n = int(input("Enter number of elements: "))
+print("Enter elements separated by space:")
+arr = list(map(int, input().split()))
+
+merge_sort(arr)
+
+print("Sorted array:")
+print(*arr)
+
+OUTPUT:
+Enter number of elements: 8
+Enter elements separated by space:
+22 12 27 4 6 24 35
+Sorted array:
+4 6 12 22 24 27 35
+
+=== Code Execution Successful ===
