@@ -1,0 +1,29 @@
+# Insertion Sort Program
+
+n = int(input("Enter number of elements: "))
+
+print("Enter", n, "elements separated by space:")
+arr = list(map(int, input().split()))
+
+# Insertion Sort
+for i in range(1, n):
+    key = arr[i]
+    j = i - 1
+
+    while j >= 0 and arr[j] > key:
+        arr[j + 1] = arr[j]
+        j -= 1
+
+    arr[j + 1] = key
+
+print("Sorted array:")
+print(*arr)
+
+Output:
+Enter number of elements: 6
+Enter 6 elements separated by space:
+5 4 2 7 1 3
+Sorted array:
+1 2 3 4 5 7
+
+=== Code Execution Successful ===
