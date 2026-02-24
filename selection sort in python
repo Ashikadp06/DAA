@@ -1,0 +1,20 @@
+arr = [45, 10 , 30, 5 ,20]   # Predefined list
+
+n = len(arr)
+
+for i in range(n):
+    min_index = i
+    
+    for j in range(i+1, n):
+        if arr[j] < arr[min_index]:
+            min_index = j
+    
+    # Swap
+    arr[i], arr[min_index] = arr[min_index], arr[i]
+
+print("Sorted array:", arr)
+
+OUTPUT:
+Sorted array: [5, 10, 20, 30, 45]
+
+=== Code Execution Successful ===
